@@ -1,0 +1,24 @@
+		ADADA FPS MEKANÝKLERÝ
+
+(1) - First person movement ve camera sistemi
+	Unity'nin hazýr fps paketi alýndý birkaç düzenleme yapýldý. Ve iþleyiþ anlaþýlmaya çalýþýldý. - 09.06.2023
+
+( ) - Menzilli silahlar ile düþmanlarý vurabilmek
+( ) - Player can barý
+
+
+
+
+
+
+
+
+
+		ADALARDAKÝ DÜÞMANLARIN NAVMESH ÝLE YAPAY ZEKALARI
+
+1-Düþmanlar kýlýç ile bize koþsunlar
+2-Dibimize gelince koþmayý býrakýp saldýrsýnlar
+3-Düþman can sistemleri
+4-Düþmanlar öldüklerinde ragdoll devereye girsin ve yere yýðýlsýnlar yada ölme animasyonlarý oynasýn
+
+Olasý 5-Eðer her þey iyi giderse menzilli düþman eklenebilir 
