@@ -1,11 +1,27 @@
 		ADADA FPS MEKANÝKLERÝ
 
 (1) - First person movement ve camera sistemi
-	Unity'nin hazýr fps paketi alýndý birkaç düzenleme yapýldý. Ve iþleyiþ anlaþýlmaya çalýþýldý. - 09.06.2023
+	Unity'nin hazýr fps paketi alýndý birkaç düzenleme yapýldý. Ve iþleyiþ anlaþýlmaya çalýþýldý. (09.06.2023 - 09.06.2023)
 
-( ) - Menzilli silahlar ile düþmanlarý vurabilmek
-( ) - Player can barý
+( ) - Menzilli silahlar ile düþmanlarý vurabilmek. (10.06.2023)
+	1. Silah ve mermi objeleri
+		- Silah normal salýným animasyonu
+		- Ateþleme animasyonunuda hallet
+		- Reload animasyonu
+		- Silah duvara yaklaþýnca aþaðý eðilsin
 
+	3. Patlama duman vfx
+		- Namlu vfx
+		- Horoz vfx
+		- Reload vfx
+
+	4. Silahýn mermi atmasý
+		- Instantiate ile mermi atmak
+		- Mermilerin çarptýklarý yerde yok olmalarý
+		- Object pooling
+
+	5. Düþman kuklasý
+		- Düþman hp system
 
 
 
@@ -18,7 +34,20 @@
 
 1-Düþmanlar kýlýç ile bize koþsunlar
 2-Dibimize gelince koþmayý býrakýp saldýrsýnlar
-3-Düþman can sistemleri
 4-Düþmanlar öldüklerinde ragdoll devereye girsin ve yere yýðýlsýnlar yada ölme animasyonlarý oynasýn
 
 Olasý 5-Eðer her þey iyi giderse menzilli düþman eklenebilir 
+
+
+
+
+
+
+
+
+
+
+
+
+Notlar
+1- oyunu mobilde oynayacaðýmýz için player controller scriptindeki "Rotation Speed" deðiþkenini 0.2f deðerine almamýz lazým. ben þimdi bilisayarda test ettiðimden 1f deðerinde kalsýn.
