@@ -22,14 +22,20 @@ public class PistolController : MonoBehaviour
     bool isFrontWall;
 
 
-    [Header("Is Pistol In Ground")]
+    [Header("Attack VFX")]
+    public ParticleSystem muzzleFlashPS;
     public ParticleSystem sparklingPS;
-    public ParticleSystem smokePS;
 
+    [Header("Attack System")]
+    public GameObject bulletPrefab;
+    public float bulletSpeed;
+    Transform muzzlePos;
 
     void Start()
     {
         pistolObj = GetComponent<Transform>();
+        muzzlePos = muzzleFlashPS.transform;
+
 
         canAtk = true;
         isFrontWall = false;
@@ -75,6 +81,8 @@ public class PistolController : MonoBehaviour
 
             canAtk = false;
             Invoke(nameof(ResetAtkSpeed), attackSpeed);
+
+            Invoke(nameof(InstantiateBullet), 0.12f);
         }
     }
     public void ReloadPistol()
@@ -87,12 +95,22 @@ public class PistolController : MonoBehaviour
             Invoke(nameof(ResetAtkSpeed), reloadTime);
         }
     }
+    void InstantiateBullet()
+    {
+        GameObject a = Instantiate(bulletPrefab, muzzlePos.position, Quaternion.identity);
+        a.GetComponent<Rigidbody>().velocity = muzzlePos.right * bulletSpeed;
+    }
+
+
+
+
+
     void ResetAtkSpeed()
     {
         canAtk = true;
     }
     void SmokeDelay()
     {
-        smokePS.Play();
+        muzzleFlashPS.Play();
     }
 }

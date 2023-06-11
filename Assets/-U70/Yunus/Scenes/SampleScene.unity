@@ -391,12 +391,12 @@ GameObject:
   - component: {fileID: 26585081}
   - component: {fileID: 26585080}
   m_Layer: 0
-  m_Name: SmokeVFX
+  m_Name: SmokeVFX-Old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &26585079
 Transform:
   m_ObjectHideFlags: 0
@@ -7208,6 +7208,7 @@ Transform:
   - {fileID: 1923275585}
   - {fileID: 1280391590}
   - {fileID: 26585079}
+  - {fileID: 1127192601941434002}
   - {fileID: 1102615604}
   m_Father: {fileID: 1436228254}
   m_RootOrder: 0
@@ -13249,7 +13250,7 @@ GameObject:
   - component: {fileID: 1102615606}
   - component: {fileID: 1102615605}
   m_Layer: 0
-  m_Name: Sparklin
+  m_Name: SparklingVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13268,7 +13269,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 650765787}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &1102615605
 ParticleSystemRenderer:
@@ -19188,8 +19189,10 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
+  muzzleFlashPS: {fileID: 970152592383120406}
   sparklingPS: {fileID: 1102615606}
-  smokePS: {fileID: 26585081}
+  bulletPrefab: {fileID: 3913087083648021981, guid: 4d04883cfe723cd4585c536ff76004ab, type: 3}
+  bulletSpeed: 50
 --- !u!1 &1446403843
 GameObject:
   m_ObjectHideFlags: 0
@@ -19599,10 +19602,6 @@ PrefabInstance:
     - target: {fileID: 6604337775313982483, guid: 7c698a3db20636e438eafab952b9404d, type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
-      objectReference: {fileID: 0}
-    - target: {fileID: 6604337775313982484, guid: 7c698a3db20636e438eafab952b9404d, type: 3}
-      propertyPath: GroundLayers.m_Bits
-      value: 576
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c698a3db20636e438eafab952b9404d, type: 3}
@@ -21170,3 +21169,70 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &970152592383120406 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4492717030814969489, guid: 0a3a5264678782643a7cb502d7e19cee, type: 3}
+  m_PrefabInstance: {fileID: 3688442539493915271}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1127192601941434002 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4362700792207221781, guid: 0a3a5264678782643a7cb502d7e19cee, type: 3}
+  m_PrefabInstance: {fileID: 3688442539493915271}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3688442539493915271
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 650765787}
+    m_Modifications:
+    - target: {fileID: 4362700792207221781, guid: 0a3a5264678782643a7cb502d7e19cee, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362700792207221781, guid: 0a3a5264678782643a7cb502d7e19cee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362700792207221781, guid: 0a3a5264678782643a7cb502d7e19cee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362700792207221781, guid: 0a3a5264678782643a7cb502d7e19cee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.592
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362700792207221781, guid: 0a3a5264678782643a7cb502d7e19cee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362700792207221781, guid: 0a3a5264678782643a7cb502d7e19cee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362700792207221781, guid: 0a3a5264678782643a7cb502d7e19cee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362700792207221781, guid: 0a3a5264678782643a7cb502d7e19cee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362700792207221781, guid: 0a3a5264678782643a7cb502d7e19cee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362700792207221781, guid: 0a3a5264678782643a7cb502d7e19cee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362700792207221781, guid: 0a3a5264678782643a7cb502d7e19cee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368396379311561535, guid: 0a3a5264678782643a7cb502d7e19cee, type: 3}
+      propertyPath: m_Name
+      value: MuzzleFlashVFX
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0a3a5264678782643a7cb502d7e19cee, type: 3}
