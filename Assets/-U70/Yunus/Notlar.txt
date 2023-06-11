@@ -5,15 +5,14 @@
 
 ( ) - Menzilli silahlar ile düþmanlarý vurabilmek. (10.06.2023)
 	1. Silah ve mermi objeleri
-		- Silah normal salýným animasyonu
-		- Ateþleme animasyonunuda hallet
-		- Reload animasyonu
-		- Silah duvara yaklaþýnca aþaðý eðilsin
+		+ Silah normal salýným animasyonu
+		+ Ateþleme animasyonunuda hallet
+		+ Reload animasyonu
+		+ Silah duvara yaklaþýnca aþaðý eðilsin
 
 	3. Patlama duman vfx
-		- Namlu vfx
-		- Horoz vfx
-		- Reload vfx
+		+ Namlu vfx
+		+ Horoz vfx
 
 	4. Silahýn mermi atmasý
 		- Instantiate ile mermi atmak
@@ -27,13 +26,11 @@
 
 
 
-
-
-
 		ADALARDAKÝ DÜÞMANLARIN NAVMESH ÝLE YAPAY ZEKALARI
 
 1-Düþmanlar kýlýç ile bize koþsunlar
 2-Dibimize gelince koþmayý býrakýp saldýrsýnlar
+3-Player HP system
 4-Düþmanlar öldüklerinde ragdoll devereye girsin ve yere yýðýlsýnlar yada ölme animasyonlarý oynasýn
 
 Olasý 5-Eðer her þey iyi giderse menzilli düþman eklenebilir 
@@ -46,8 +43,6 @@ Olasý 5-Eðer her þey iyi giderse menzilli düþman eklenebilir
 
 
 
-
-
-
 Notlar
 1- oyunu mobilde oynayacaðýmýz için player controller scriptindeki "Rotation Speed" deðiþkenini 0.2f deðerine almamýz lazým. ben þimdi bilisayarda test ettiðimden 1f deðerinde kalsýn.
+2- Oyun çýktý alýnacaðý zaman 60 fps'e sýnýrlandýrýlmalý  
