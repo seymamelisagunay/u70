@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PistolController : MonoBehaviour
 {
@@ -28,8 +30,17 @@ public class PistolController : MonoBehaviour
 
     [Header("Attack System")]
     public GameObject bulletPrefab;
-    public float bulletSpeed;
+    public float bulletDamage;
+    public float maxAmmo;
+    public TextMeshProUGUI ammoTxt;
+
     Transform muzzlePos;
+    float ammo;
+
+    [Space(10)]
+    public Camera fpsCam;                                   //cameradan ileri ray atacaz ve deydiði yere mermi ateþleyecez
+    public float range;
+
 
     void Start()
     {
@@ -39,6 +50,9 @@ public class PistolController : MonoBehaviour
 
         canAtk = true;
         isFrontWall = false;
+
+        ammo = maxAmmo;
+        ammoTxt.text = ammo.ToString();
     }
     void Update()
     {
@@ -72,7 +86,7 @@ public class PistolController : MonoBehaviour
 
     public void Shoot() //Daha sonradan mobil için ui'a bir buton eklenecek
     {
-        if (canAtk && !isFrontWall)
+        if (canAtk && !isFrontWall && ammo > 0)
         {
             pistolAnim.SetTrigger("pistolShoot");
 
@@ -82,13 +96,28 @@ public class PistolController : MonoBehaviour
             canAtk = false;
             Invoke(nameof(ResetAtkSpeed), attackSpeed);
 
-            Invoke(nameof(InstantiateBullet), 0.12f);
+            InstantiateBullet();
+
+            ammo--;
+            ammoTxt.text = ammo.ToString();
+
+            if (ammo <= 0)
+            {
+                Invoke(nameof(ReloadPistol), attackSpeed + 0.05f);
+            }
+        }
+        else if (ammo <= 0)
+        {
+            ReloadPistol();
         }
     }
     public void ReloadPistol()
     {
         if (canAtk && !isFrontWall)
         {
+            ammo = maxAmmo;
+            ammoTxt.text = ammo.ToString();
+
             pistolAnim.SetTrigger("pistolReload");
 
             canAtk = false;
@@ -97,8 +126,24 @@ public class PistolController : MonoBehaviour
     }
     void InstantiateBullet()
     {
-        GameObject a = Instantiate(bulletPrefab, muzzlePos.position, Quaternion.identity);
-        a.GetComponent<Rigidbody>().velocity = muzzlePos.right * bulletSpeed;
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out RaycastHit hit, range))       //bu ray bir þeye çarparsa true döndürür
+        {
+            if (hit.transform.CompareTag("EnemyBlood"))
+            {
+                GeneralPool.BloodEffect(hit.point, 1);
+                hit.transform.GetComponentInParent<EnemyHP>().GetDamage(bulletDamage);
+            }
+            else if (hit.transform.CompareTag("EnemySkeleton"))
+            {
+                GeneralPool.FlashEffect(hit.point, 1);
+                hit.transform.GetComponentInParent<EnemyHP>().GetDamage(bulletDamage);
+            }
+            else
+            {
+                GeneralPool.FlashEffect(hit.point, 1);
+            }
+            
+        }
     }
 
 

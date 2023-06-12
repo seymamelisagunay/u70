@@ -1,26 +1,27 @@
 		ADADA FPS MEKANÝKLERÝ
 
-(1) - First person movement ve camera sistemi
+(1 gün) - First person movement ve camera sistemi
 	Unity'nin hazýr fps paketi alýndý birkaç düzenleme yapýldý. Ve iþleyiþ anlaþýlmaya çalýþýldý. (09.06.2023 - 09.06.2023)
 
-( ) - Menzilli silahlar ile düþmanlarý vurabilmek. (10.06.2023)
+(3 gün) - Menzilli silahlar ile düþmanlarý vurabilmek. (10.06.2023 - 12.06.2023)
 	1. Silah ve mermi objeleri
 		+ Silah normal salýným animasyonu
 		+ Ateþleme animasyonunuda hallet
 		+ Reload animasyonu
 		+ Silah duvara yaklaþýnca aþaðý eðilsin
+		+ Otomatik reload sistemi
 
 	3. Patlama duman vfx
 		+ Namlu vfx
 		+ Horoz vfx
 
 	4. Silahýn mermi atmasý
-		- Instantiate ile mermi atmak
-		- Mermilerin çarptýklarý yerde yok olmalarý
-		- Object pooling
+		+ Instantiate ile mermi atmak - raycast ile çözüldü (cameranýn ortasýdan ray atýlýyor ve çarptýðý yere hasar veriliyor)
+		+ Mermilerin çarptýklarý yerde yok olmalarý - iptal (sadece ray atýlan yerde bir particle oynuyor artýk)
+		+ Object pooling
 
 	5. Düþman kuklasý
-		- Düþman hp system
+		+ Düþman hp system
 
 
 
@@ -28,12 +29,25 @@
 
 		ADALARDAKÝ DÜÞMANLARIN NAVMESH ÝLE YAPAY ZEKALARI
 
-1-Düþmanlar kýlýç ile bize koþsunlar
-2-Dibimize gelince koþmayý býrakýp saldýrsýnlar
-3-Player HP system
-4-Düþmanlar öldüklerinde ragdoll devereye girsin ve yere yýðýlsýnlar yada ölme animasyonlarý oynasýn
+( gün) - Düþmanlar kýlýç ile bize koþsunlar
+		- Düþman iskelet  modelleri eklenecek
+		- Navmesh ile bize doðru koþacaklar
+		- Koþma animasyonlarý aktifleþtirilecek
+
+( gün) - Dibimize gelince koþmayý býrakýp saldýrsýnlar
+		- Saldýrý animasyonlarý aktifleþtirilecek
+		- Player HP system
+		- Kýlýç bize deðerse hasar verecek
+
+( gün) - Düþmanlar, canlarý sýfýrlanýnca ölsünler
+		- EnemyHP içinde yrýntýlý þekilde yazýldý
+
 
 Olasý 5-Eðer her þey iyi giderse menzilli düþman eklenebilir 
+
+
+
+
 
 
 
@@ -46,3 +60,28 @@ Olasý 5-Eðer her þey iyi giderse menzilli düþman eklenebilir
 Notlar
 1- oyunu mobilde oynayacaðýmýz için player controller scriptindeki "Rotation Speed" deðiþkenini 0.2f deðerine almamýz lazým. ben þimdi bilisayarda test ettiðimden 1f deðerinde kalsýn.
 2- Oyun çýktý alýnacaðý zaman 60 fps'e sýnýrlandýrýlmalý  
+
+
+        //UnityEditor.EditorApplication.isPaused = true;
+
+
+
+
+void InstantiateBullet()		//mermili fps mekaniði
+    {
+        GameObject a = Instantiate(bulletPrefab, muzzlePos.position, Quaternion.identity);
+
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out RaycastHit hit, range))       //bu ray bir þeye çarparsa true döndürür
+        {
+            //Debug.Log(hit.transform.tag);
+
+            Vector3 direction = hit.point - muzzlePos.position;                                       //cameradan attýðýz ýþýnýn oduðu noktaya ateþ eder
+
+
+            a.GetComponent<Rigidbody>().velocity = direction.normalized * bulletSpeed;
+        }
+        else
+        {
+            a.GetComponent<Rigidbody>().velocity = muzzlePos.right * bulletSpeed;
+        }
+    }

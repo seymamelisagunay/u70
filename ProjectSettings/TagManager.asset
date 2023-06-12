@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CinemachineTarget
   - Ground
+  - EnemyBlood
+  - EnemySkeleton
   layers:
   - Default
   - TransparentFX
