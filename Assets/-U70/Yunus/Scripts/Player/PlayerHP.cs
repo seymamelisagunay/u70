@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyHP : MonoBehaviour
+public class PlayerHP : MonoBehaviour
 {
     [Header("HP")]
     public float maxHealth;
@@ -23,6 +23,14 @@ public class EnemyHP : MonoBehaviour
         hpImage.fillAmount = 1;
         hpTxt.text = hp.ToString();
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("EnemyWeapon") && other.GetComponent<EnemyWeapon>().enemyHolder.canGiveDmg)
+        {
+            other.GetComponent<EnemyWeapon>().enemyHolder.canGiveDmg = false;
+            GetDamage(other.GetComponent<EnemyWeapon>().enemyHolder.attackDamage);
+        }
+    }
     public void GetDamage(float damage)
     {
         hp -= damage - damage * armour;
@@ -33,16 +41,12 @@ public class EnemyHP : MonoBehaviour
             Die();
         }
 
-        hpImage.fillAmount = hp/maxHealth;
+        hpImage.fillAmount = hp / maxHealth;
         hpTxt.text = hp.ToString();
     }
 
     void Die()
     {
-        Destroy(gameObject);
-        //ölme animasyonunu oynat
-        //hareketi sýfýrla
-        //2 sn sonra düþmanlar aþaðý doðru insinler 
-        //yerde gözükmedikleri zaman destroy olsunlar
+        //Player ölme sistemleri
     }
 }

@@ -29,18 +29,23 @@
 
 		ADALARDAKÝ DÜÞMANLARIN NAVMESH ÝLE YAPAY ZEKALARI
 
-( gün) - Düþmanlar kýlýç ile bize koþsunlar
-		- Düþman iskelet  modelleri eklenecek
-		- Navmesh ile bize doðru koþacaklar
-		- Koþma animasyonlarý aktifleþtirilecek
+(0.33 gün) - Düþmanlar kýlýç ile bize koþsunlar
+		+ Düþman iskelet  modelleri eklenecek
+		+ Navmesh ile bize doðru koþacaklar
+		+ Koþma animasyonlarý aktifleþtirilecek
 
-( gün) - Dibimize gelince koþmayý býrakýp saldýrsýnlar
-		- Saldýrý animasyonlarý aktifleþtirilecek
-		- Player HP system
-		- Kýlýç bize deðerse hasar verecek
+(0.33 gün) - Dibimize gelince koþmayý býrakýp saldýrsýnlar
+		+ Saldýrý animasyonlarý aktifleþtirilecek
+		+ Player HP system
+		+ Kýlýç bize deðerse hasar verecek
 
-( gün) - Düþmanlar, canlarý sýfýrlanýnca ölsünler
-		- EnemyHP içinde yrýntýlý þekilde yazýldý
+(0.33 gün) - Düþmanlar, canlarý sýfýrlanýnca ölsünler
+		+ EnemyHP içinde ayrýntýlý þekilde yazýldý
+
+
+		--- Düþmanlar saldýrýrken tam olarak bize doðru baksýnlar biz kaçarkende bize dönsünler (saldýrý yaparken hýzý normalin yarýsýna düþsün ama yinede bize doru gelsin)
+		--- Player ölüm kýsmýný ayarla
+
 
 
 Olasý 5-Eðer her þey iyi giderse menzilli düþman eklenebilir 
