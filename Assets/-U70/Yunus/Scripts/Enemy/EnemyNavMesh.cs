@@ -40,37 +40,41 @@ public class EnemyNavMesh : MonoBehaviour
         agent.isStopped = true;
 
         defaultSpeed = agent.speed;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (isAlive)
         {
-            follow = true;
-            agent.isStopped = false;
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            follow = false;
-            agent.isStopped = true;
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                follow = true;
+                agent.isStopped = false;
+            }
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                follow = false;
+                agent.isStopped = true;
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        if (follow && isAlive)
-        {
-            agent.destination = target.position;
-            agent.speed = defaultSpeed;
-        }
-        if (IsAgentReachTarget() && !agent.isStopped)
-        {
-            Attack();
-        }
-
         if (isAlive)
         {
+            if (follow && isAlive)
+            {
+                agent.destination = target.position;
+                agent.speed = defaultSpeed;
+            }
+            if (IsAgentReachTarget() && !agent.isStopped)
+            {
+                Attack();
+            }
+
             Vector2 flatVelocity = new Vector2(agent.velocity.x, agent.velocity.z);
             float speed = flatVelocity.magnitude;
 
@@ -133,23 +137,5 @@ public class EnemyNavMesh : MonoBehaviour
     {
         follow = true;
         canAtk = true;
-    }
-
-    public void ProduceEnemy()
-    {
-        agent = GetComponent<NavMeshAgent>();
-        animator = GetComponentInChildren<Animator>();
-        target = FindObjectOfType<FirstPersonController>().transform;
-        pistolAsTarget = FindObjectOfType<PistolController>().transform;
-        bodyColl = GetComponent<CapsuleCollider>();
-
-        follow = true;
-        canAtk = true;
-        canGiveDmg = false;
-        isAlive = true;
-
-        agent.isStopped = false;
-
-        defaultSpeed = agent.speed;
     }
 }
