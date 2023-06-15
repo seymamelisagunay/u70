@@ -1,4 +1,4 @@
-		ADADA FPS MEKANÝKLERÝ
+		ADADA FPS MEKANÝKLERÝ		- = yapýlacaklar,  + = yapýldý
 
 (1 gün) - First person movement ve camera sistemi
 	Unity'nin hazýr fps paketi alýndý birkaç düzenleme yapýldý. Ve iþleyiþ anlaþýlmaya çalýþýldý. (09.06.2023 - 09.06.2023)
@@ -43,8 +43,10 @@
 		+ EnemyHP içinde ayrýntýlý þekilde yazýldý
 
 
-		--- Düþmanlar saldýrýrken tam olarak bize doðru baksýnlar biz kaçarkende bize dönsünler (saldýrý yaparken hýzý normalin yarýsýna düþsün ama yinede bize doru gelsin)
-		--- Player ölüm kýsmýný ayarla
+		+ Düþmanlar saldýrýrken tam olarak bize doðru baksýnlar biz kaçarkende bize dönsünler (saldýrý yaparken hýzý normalin yarýsýna düþsün ama yinede bize doru gelsin)
+		+ Player ölüm kýsmýný ayarla
+		- Enemy +1 saldýrý animasyonu
+		- Enemy ölme animasyonu
 
 
 

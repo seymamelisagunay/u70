@@ -96,7 +96,7 @@ public class PistolController : MonoBehaviour
             canAtk = false;
             Invoke(nameof(ResetAtkSpeed), attackSpeed);
 
-            InstantiateBullet();
+            Invoke(nameof(InstantiateBullet), 0.15f);
 
             ammo--;
             ammoTxt.text = ammo.ToString();
@@ -113,7 +113,7 @@ public class PistolController : MonoBehaviour
     }
     public void ReloadPistol()
     {
-        if (canAtk && !isFrontWall)
+        if (canAtk && !isFrontWall && ammo < maxAmmo)
         {
             ammo = maxAmmo;
             ammoTxt.text = ammo.ToString();
@@ -142,7 +142,6 @@ public class PistolController : MonoBehaviour
             {
                 GeneralPool.FlashEffect(hit.point, 1);
             }
-            
         }
     }
 
