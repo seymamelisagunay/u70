@@ -16,6 +16,5 @@ public class EnemyProducer : MonoBehaviour
         GameObject a = Instantiate(enemy, transform.position, Quaternion.identity, transform);
 
         a.transform.position = new Vector3(transform.position.x + Random.Range(-5, 5), transform.position.y, transform.position.z + Random.Range(-5, 5));
-        a.GetComponent<EnemyNavMesh>().ProduceEnemy();
     }
 }
