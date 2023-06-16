@@ -47,8 +47,10 @@
 		+ Player ölüm kýsmýný ayarla
 		- Enemy +1 saldýrý animasyonu (yapamadým) - hepsi bir arada olan paketten saldýrý animasyonu almaya bak   ??????
 		+ Enemy ölme animasyonu (ragdoll ile halledildi)
-		- Düþmanlar öldüklerinde zemine doðru çekilsinler
-		- Düþmanlar öldüklerinde dissolve gibi bir gözden kaybolma shader'ý oynayabilir
+		+ Düþmanlar öldüklerinde zemine doðru çekilsinler
+		- Düþmanlar öldüklerinde dissolve gibi bir gözden kaybolma shader'ý oynayabilir - (yapamadým)
+
+
 
 
 

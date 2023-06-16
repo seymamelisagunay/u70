@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 3413120489895858413}
   - component: {fileID: 3413120489895858414}
   - component: {fileID: 3413120489895858415}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EmeyHPCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 3413120489917080168}
   - component: {fileID: 3413120489917080175}
   - component: {fileID: 3413120489917080174}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -826,7 +826,7 @@ GameObject:
   - component: {fileID: 3413120490041342130}
   - component: {fileID: 3413120490041342128}
   - component: {fileID: 3413120490041342129}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HPBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1740,7 +1740,7 @@ GameObject:
   - component: {fileID: 3413120490545295774}
   - component: {fileID: 3413120490545295775}
   - component: {fileID: 3413120490545295768}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}

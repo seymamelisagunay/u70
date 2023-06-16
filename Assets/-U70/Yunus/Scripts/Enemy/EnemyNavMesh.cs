@@ -87,21 +87,18 @@ public class EnemyNavMesh : MonoBehaviour
         isAlive = false;
         agent.isStopped = true;
 
-        bodyColl.enabled = false;       //öldükten sonra diðer karakterler içinden geçebilsin diye
-        Invoke(nameof(Awd), 0.2f);
+        bodyColl.enabled = false;               //öldükten sonra diðer karakterler içinden geçebilsin diye
+        Invoke(nameof(Awd), 0.1f);
 
-        //animator.SetTrigger("Fall1");
+        //animator.SetTrigger("Fall1");         //ölme animasyonu - gerek yok ragdoll ile hallettik
 
-        transform.DOMoveY(transform.position.y - 1, 3).SetDelay(2);
+        transform.DOMoveY(transform.position.y - 5, 1).SetDelay(2.5f);
 
-        //can bar kýsmý kapansýn
-
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 3.5f);
     }
     void Awd()
     {
         animator.enabled = false;       //öldükten sonra ragdoll olsun diye
-
     }
 
 
