@@ -50,6 +50,9 @@
 		+ Düþmanlar öldüklerinde zemine doðru çekilsinler
 		- Düþmanlar öldüklerinde dissolve gibi bir gözden kaybolma shader'ý oynayabilir - (yapamadým)
 
+		- Benim sistemler adalara entegre edilecek - iskeletlerin y deki deðiþimlerine bak
+		- Collectable objectler üretilecek ve etkile uygulanacak
+
 
 
 
