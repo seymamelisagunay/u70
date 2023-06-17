@@ -124,7 +124,7 @@ public class EnemyNavMesh : MonoBehaviour
 
             animator.SetTrigger("Attack1h1");
 
-            Vector3 horizontalTarget = new(pistolAsTarget.position.x, 0, pistolAsTarget.position.z);
+            Vector3 horizontalTarget = new(pistolAsTarget.position.x, transform.position.y, pistolAsTarget.position.z);
             transform.DOLookAt(horizontalTarget, atkLookTargetTime).SetDelay(0.2f);
 
             Invoke(nameof(ResetAtk), attackSpeed);

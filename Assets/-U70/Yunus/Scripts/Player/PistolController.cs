@@ -132,7 +132,7 @@ public class PistolController : MonoBehaviour
             if (hit.transform.CompareTag("EnemyBlood"))
             {
                 GeneralPool.BloodEffect(hit.point, 1);
-                hit.transform.GetComponentInParent<EnemyHP>().GetDamage(bulletDamage);
+                hit.transform.GetComponentInParent<BossHP>().GetDamage(bulletDamage);
             }
             else if (hit.transform.CompareTag("EnemySkeleton"))
             {
