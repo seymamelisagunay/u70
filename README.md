@@ -1,4 +1,4 @@
-# Takım İsmi ve Üyeleri:
+# Takım İsmi ve Üyeleri
 
 Unity U70:
 
@@ -10,17 +10,17 @@ Unity U70:
 
 ---
 
-# Ürün ile İlgili Bilgiler:
+# Ürün ile İlgili Bilgiler
 
-## Ürün İsmi:
+## Ürün İsmi
 
-Korsanın Hazinesi
+Pirate's Treasure
 
-## Açıklama:
+## Açıklama
 
 "Korsanın Hazinesi", heyecan dolu bir macera oyunudur. Dört farklı ziyaret edilebilir adada korsan olarak yolculuk yapacak ve büyük bir hazineye ulaşmak için mücadele edeceksiniz. Her adada sizi bekleyen bulmacaları çözerek ilerlerken, dikkatli olmanız gereken bubi tuzakları ve ateş eden düşman iskeletlerle karşılaşacaksınız. İlk adada bulunan bir harita, size diğer adaları gösterecek ve hazineye giden yolu açacak. Ancak her adada farklı engeller ve bulmacalarla karşılaşacaksınız. Son ada ise sizi zorlu bir dungeon'a götürecek. İskeletlere karşı savaşarak ilerler ve son bulmacayı çözerek büyük hazineye ulaşabilirsiniz. Korsanınızın mutlu mesut yaşamasını sağlamak sizin elinizde!
 
-## Özellikler:
+## Özellikler
 
 - Dört ziyaret edilebilir ada
 - Menzilli savaş mekanikleri: İskeletlere karşı kendinizi koruyabilmek için menzilli silahları kullanın.
@@ -31,14 +31,31 @@ Korsanın Hazinesi
 - Mobil platform uyumu: "Korsanın Hazinesi", mobil platformda oynamak için uygun ve keyifli bir oyun deneyimi sunuyor.
 - Low poly grafikler: Oyunun low poly stili, görsel olarak çarpıcı bir atmosfer yaratırken mobil cihazlarda da performanslı bir şekilde oynanabilir.
 
----
+# Product Backlog URL
+https://trello.com/b/pG5QBqf4/u70-kanban
 
-# Hedef Kitle:
+---
+# Ürünün özellikleri
+
+- Pirate's Treasure aksiyon-macera türünde,
+- First Person Shooter oynanışında,
+- Üç boyutlu,
+- Low poly grafikler kullananan,
+- Bulmaca ve tuzaklar içeren,
+- Cephane yönetimini destekleyen,
+- 1 tip düşman ve 1 tip Boss ile savaştığımız,
+- Hikaye odaklı bir oyundur. 
+
+
+# Hedef Kitle
 
 - 13 yaş ve üstü oyuncular
 - Aksiyon/Macera türü oyunları sevenler
 - Birinci şahıs nişancı türü oyunları oynamaktan keyif alanlar
+- Korsan temasını sevenler
+- PC ve Mobil platformlarındaki oyuncular
 
 ---
 
-# Product Backlog URL:
+# Sprint 1
+
