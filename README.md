@@ -18,7 +18,7 @@ Pirate's Treasure
 
 ## Açıklama
 
-"Korsanın Hazinesi", heyecan dolu bir macera oyunudur. Dört farklı ziyaret edilebilir adada korsan olarak yolculuk yapacak ve büyük bir hazineye ulaşmak için mücadele edeceksiniz. Her adada sizi bekleyen bulmacaları çözerek ilerlerken, dikkatli olmanız gereken bubi tuzakları ve ateş eden düşman iskeletlerle karşılaşacaksınız. İlk adada bulunan bir harita, size diğer adaları gösterecek ve hazineye giden yolu açacak. Ancak her adada farklı engeller ve bulmacalarla karşılaşacaksınız. Son ada ise sizi zorlu bir dungeon'a götürecek. İskeletlere karşı savaşarak ilerler ve son bulmacayı çözerek büyük hazineye ulaşabilirsiniz. Korsanınızın mutlu mesut yaşamasını sağlamak sizin elinizde!
+"Pirate's Treasure", heyecan dolu bir macera oyunudur. Dört farklı ziyaret edilebilir adada korsan olarak yolculuk yapacak ve büyük bir hazineye ulaşmak için mücadele edeceksiniz. Her adada sizi bekleyen bulmacaları çözerek ilerlerken, dikkatli olmanız gereken bubi tuzakları ve ateş eden düşman iskeletlerle karşılaşacaksınız. İlk adada bulunan bir harita, size diğer adaları gösterecek ve hazineye giden yolu açacak. Ancak her adada farklı engeller ve bulmacalarla karşılaşacaksınız. Son ada ise sizi zorlu bir dungeon'a götürecek. İskeletlere karşı savaşarak ilerler ve son bulmacayı çözerek büyük hazineye ulaşabilirsiniz. Korsanınızın mutlu mesut yaşamasını sağlamak sizin elinizde!
 
 ## Özellikler
 
