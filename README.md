@@ -1,6 +1,6 @@
 # Takım İsmi ve Üyeleri
 
-Unity U70 - Pirate Gamers
+Unity U70 - Pirate Game
 
 - Sibel Erkota: Product Owner
 - Ender Şık: Scrum Master
