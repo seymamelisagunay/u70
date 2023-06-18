@@ -58,4 +58,5 @@ https://trello.com/b/pG5QBqf4/u70-kanban
 ---
 
 # Sprint 1
-
+1. Sprintte tamamlanması gereken 120 birim puan bulunmaktadır. (Projenin toplam puan maliyeti 300 birmdir)
+İleride yaşanacak potansiyel aksaklıklar ve olası riskler göze alındığında 3 sprintten oluşacak bootcampde 20 puan önde olmak istedik. 
