@@ -47,12 +47,23 @@
 		+ Player ölüm kýsmýný ayarla
 		- Enemy +1 saldýrý animasyonu (yapamadým) - hepsi bir arada olan paketten saldýrý animasyonu almaya bak   ??????
 		+ Enemy ölme animasyonu (ragdoll ile halledildi)
-		- Düþmanlar öldüklerinde zemine doðru çekilsinler
-		- Düþmanlar öldüklerinde dissolve gibi bir gözden kaybolma shader'ý oynayabilir
+		+ Düþmanlar öldüklerinde zemine doðru çekilsinler
+		- Düþmanlar öldüklerinde dissolve gibi bir gözden kaybolma shader'ý oynayabilir - (yapamadým)
+
+		+ Benim sistemler adalara entegre edilecek
+		+ Collectable objectler üretilecek ve etkile uygulanacak - objeler kendini belli edecek þekilde göz alýcý olacak ve üzerlerine yürüyünce onlarý alacaðýz
+		+ Ýskeletler öldüklerinde yerde rasgele mermi çýksýn
+		- Boss yaðay zekasý yazýlacak
+			1. 4 tane hýzlý fireball atar
+			2. Ardýndan zeminden 4 tane iskelet çýkartýr
+				- Ýskeletleri çýkartýrken bir kalkan aktif olsun ve hasar almasýn
+			3. Hareket edemez, sadece dönebilir
 
 
 
-Olasý 5-Eðer her þey iyi giderse menzilli düþman eklenebilir 
+
+Olasý 4- Player bomba atma mekaniði eklenebilir
+Olasý 5- Eðer her þey iyi giderse menzilli düþman eklenebilir 
 
 
 

@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 3413120489858735761}
   - component: {fileID: 3413120489858735762}
   - component: {fileID: 3413120489858735763}
+  - component: {fileID: 805274005}
   m_Layer: 0
   m_Name: SWORD
   m_TagString: EnemyWeapon
@@ -161,6 +162,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHolder: {fileID: 3413120489866164727}
+--- !u!65 &805274005
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3413120489858735725}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.44101423, y: 0.13123758, z: 5.362972}
+  m_Center: {x: -0.00017731555, y: -0.0032399516, z: 2.0382802}
 --- !u!1 &3413120489866164721
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +281,9 @@ MonoBehaviour:
   hpCanvas: {fileID: 3413120489895858408}
   hpTxt: {fileID: 3413120489917080174}
   hpImage: {fileID: 3413120490545295768}
+  bullet: {fileID: 8499196669416552380, guid: fcc2981aabb5d3145ac77c3f73f8627c, type: 3}
+  dropRate: 50
+  bulletDieTime: 2
 --- !u!1 &3413120489895858409
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +298,7 @@ GameObject:
   - component: {fileID: 3413120489895858413}
   - component: {fileID: 3413120489895858414}
   - component: {fileID: 3413120489895858415}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EmeyHPCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +565,7 @@ GameObject:
   - component: {fileID: 3413120489917080168}
   - component: {fileID: 3413120489917080175}
   - component: {fileID: 3413120489917080174}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -826,7 +843,7 @@ GameObject:
   - component: {fileID: 3413120490041342130}
   - component: {fileID: 3413120490041342128}
   - component: {fileID: 3413120490041342129}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HPBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1740,7 +1757,7 @@ GameObject:
   - component: {fileID: 3413120490545295774}
   - component: {fileID: 3413120490545295775}
   - component: {fileID: 3413120490545295768}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}

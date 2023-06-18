@@ -14,6 +14,12 @@ public class GeneralPool : MonoBehaviour
 
     public static ObjectPooling bloodPool;
 
+    [Header("Blood Obj")]
+    public GameObject bullet;
+    public int bulletObjCountInPool;
+
+    public static ObjectPooling bulletPool;
+
 
     void Start()
     {
@@ -22,6 +28,9 @@ public class GeneralPool : MonoBehaviour
 
         bloodPool = new ObjectPooling(blood, transform);
         bloodPool.HavuzuDoldur(bloodObjCountInPool);
+
+        bulletPool = new ObjectPooling(bullet, transform);
+        bulletPool.HavuzuDoldur(bulletObjCountInPool);
     }
 
     public static void FlashEffect(Vector3 pos, float dieTime)
@@ -42,5 +51,15 @@ public class GeneralPool : MonoBehaviour
 
         a.GetComponent<Flash>().dieTime = dieTime;
         a.GetComponent<Flash>().pool = bloodPool;
+    }
+
+    public static void BulletAmmo(Vector3 pos, float dieTime)
+    {
+        GameObject a = bulletPool.HavuzdanObjeCek();
+
+        a.transform.position = pos;
+
+        a.GetComponent<Bullet>().dieTime = dieTime;
+        a.GetComponent<Bullet>().pool = bulletPool;
     }
 }

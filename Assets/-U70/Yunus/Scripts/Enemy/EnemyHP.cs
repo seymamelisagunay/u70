@@ -18,6 +18,10 @@ public class EnemyHP : MonoBehaviour
     public TextMeshProUGUI hpTxt;
     public Image hpImage;
 
+    [Header("Drop Collectable")]
+    [Range(0, 100)] public int dropRate;
+    public float bulletDieTime;
+
 
     void Start()
     {
@@ -50,7 +54,11 @@ public class EnemyHP : MonoBehaviour
 
             //Die type
             if (GetComponent<EnemyNavMesh>())
+            {
+                InsBullet();
+
                 GetComponent<EnemyNavMesh>().Die();
+            }
             else
                 Destroy(gameObject);
         }
@@ -59,5 +67,12 @@ public class EnemyHP : MonoBehaviour
     {
         hpCanvas.DOScale(hpCanvas.localScale.x * 1.4f, 1f).SetEase(Ease.OutBack);
         hpCanvas.GetComponent<CanvasGroup>().DOFade(0, 1f);
+    }
+    void InsBullet()
+    {
+        if (Random.Range(0, 100) < dropRate)
+        {
+            GeneralPool.BulletAmmo(transform.position, bulletDieTime);
+        }
     }
 }

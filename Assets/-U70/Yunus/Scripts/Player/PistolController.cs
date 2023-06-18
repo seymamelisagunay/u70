@@ -1,9 +1,10 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class PistolController : MonoBehaviour
 {
+    public static PistolController ins;
+
     [Header("Pistol Follow")]
     Transform pistolObj;
     public Transform followPivot;
@@ -30,18 +31,24 @@ public class PistolController : MonoBehaviour
 
     [Header("Attack System")]
     public GameObject bulletPrefab;
-    public float bulletDamage;
-    public float maxAmmo;
     public TextMeshProUGUI ammoTxt;
+    public CollectableObj bullet;
+    public float bulletDamage;
+    public int maxPistolAmmo;
+    public int maxPocketAmmo;
 
     Transform muzzlePos;
-    float ammo;
+    int ammo;
 
     [Space(10)]
     public Camera fpsCam;                                   //cameradan ileri ray atacaz ve deydiði yere mermi ateþleyecez
     public float range;
 
 
+    private void Awake()
+    {
+        ins = this;
+    }
     void Start()
     {
         pistolObj = GetComponent<Transform>();
@@ -51,7 +58,7 @@ public class PistolController : MonoBehaviour
         canAtk = true;
         isFrontWall = false;
 
-        ammo = maxAmmo;
+        ammo = maxPistolAmmo;
         ammoTxt.text = ammo.ToString();
     }
     void Update()
@@ -113,9 +120,12 @@ public class PistolController : MonoBehaviour
     }
     public void ReloadPistol()
     {
-        if (canAtk && !isFrontWall && ammo < maxAmmo)
+        if (canAtk && !isFrontWall && ammo < maxPistolAmmo && ThereIsAmmo())
         {
-            ammo = maxAmmo;
+            int reloadAmmo = ReloadAmmo();
+
+            PlayerCollect.ins.UptAmmo(ammo - reloadAmmo);
+            ammo = reloadAmmo;
             ammoTxt.text = ammo.ToString();
 
             pistolAnim.SetTrigger("pistolReload");
@@ -131,7 +141,7 @@ public class PistolController : MonoBehaviour
             if (hit.transform.CompareTag("EnemyBlood"))
             {
                 GeneralPool.BloodEffect(hit.point, 1);
-                hit.transform.GetComponentInParent<EnemyHP>().GetDamage(bulletDamage);
+                hit.transform.GetComponentInParent<BossHP>().GetDamage(bulletDamage);
             }
             else if (hit.transform.CompareTag("EnemySkeleton"))
             {
@@ -144,8 +154,19 @@ public class PistolController : MonoBehaviour
             }
         }
     }
-
-
+    bool ThereIsAmmo()
+    {
+        return bullet.ammoAmount > 0;
+    }
+    int ReloadAmmo()
+    {
+        if (bullet.ammoAmount + ammo >= maxPistolAmmo)
+            return maxPistolAmmo;
+        else if (ammo == 0)
+            return bullet.ammoAmount;
+        else
+            return bullet.ammoAmount + ammo;
+    }
 
 
 
