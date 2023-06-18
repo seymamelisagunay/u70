@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 3757357301491534355}
   m_Father: {fileID: 3757357300260927735}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3757357299632272727
 MonoBehaviour:
@@ -59,7 +59,8 @@ MonoBehaviour:
   sparklingPS: {fileID: 3757357299970014206}
   bulletPrefab: {fileID: 4101243709229051385, guid: 8d68df292e1271742924bca361b21609, type: 3}
   bulletDamage: 15
-  maxAmmo: 4
+  maxPistolAmmo: 4
+  maxPocketAmmo: 20
   ammoTxt: {fileID: 3757357301532790768}
   fpsCam: {fileID: 4705562204365607511}
   range: 17
@@ -5922,11 +5923,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6015770385530576280}
   - {fileID: 4705562204365607504}
   - {fileID: 994970581857472152}
   - {fileID: 3757357299632272726}
   - {fileID: 7262144650187025688}
-  - {fileID: 6015770385530576280}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -7962,7 +7963,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3757357300260927735}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &752602999676376119
 MonoBehaviour:
@@ -7980,6 +7981,8 @@ MonoBehaviour:
   flashObjCountInPool: 3
   blood: {fileID: 4101243709229051385, guid: 7eb972d3a8c4fbf4a94de2bfa5306f94, type: 3}
   bloodObjCountInPool: 3
+  bullet: {fileID: 8499196669416552380, guid: fcc2981aabb5d3145ac77c3f73f8627c, type: 3}
+  bulletObjCountInPool: 5
 --- !u!1001 &507546096611824975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8064,7 +8067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5831179222872805033, guid: 7c698a3db20636e438eafab952b9404d, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5831179222872805033, guid: 7c698a3db20636e438eafab952b9404d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8127,6 +8130,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5831179222872805033, guid: 7c698a3db20636e438eafab952b9404d, type: 3}
   m_PrefabInstance: {fileID: 3757357299805348785}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8035409894181369762 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6604337775313982483, guid: 7c698a3db20636e438eafab952b9404d, type: 3}
+  m_PrefabInstance: {fileID: 3757357299805348785}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1721857947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8035409894181369762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ffa8ac4e69a5f649ae12326fa4ebbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalAmmoTxt: {fileID: 0}
+  collectTxt: {fileID: 0}
+  bullet: {fileID: 11400000, guid: 2dcdcd94ea6423140a764821f11012b7, type: 2}
+  bulletIncAmount: 4
+  shipBall: {fileID: 11400000, guid: f2fa021a39d3aa14bbd365de4fda863c, type: 2}
+  shipBallIncAmount: 3
 --- !u!1001 &3757357301172938839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8140,7 +8166,7 @@ PrefabInstance:
       objectReference: {fileID: 2411002004188106494}
     - target: {fileID: 4173157857957914319, guid: b43d1c14f49abf743b14bfa32726f44a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4173157857957914319, guid: b43d1c14f49abf743b14bfa32726f44a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8206,7 +8232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8460385090684445311, guid: 2717a6804321b5743ba18c6c10849105, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8460385090684445311, guid: 2717a6804321b5743ba18c6c10849105, type: 3}
       propertyPath: m_LocalPosition.x

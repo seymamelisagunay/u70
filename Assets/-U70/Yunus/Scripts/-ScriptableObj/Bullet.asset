@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   ammoName: Bullet
-  ammoAmount: 10
+  ammoAmount: 18

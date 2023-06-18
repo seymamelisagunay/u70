@@ -281,6 +281,9 @@ MonoBehaviour:
   hpCanvas: {fileID: 3413120489895858408}
   hpTxt: {fileID: 3413120489917080174}
   hpImage: {fileID: 3413120490545295768}
+  bullet: {fileID: 8499196669416552380, guid: fcc2981aabb5d3145ac77c3f73f8627c, type: 3}
+  dropRate: 50
+  bulletDieTime: 2
 --- !u!1 &3413120489895858409
 GameObject:
   m_ObjectHideFlags: 0
