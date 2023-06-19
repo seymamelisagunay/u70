@@ -3,8 +3,8 @@
 Unity U70 - Pirate Game
 
 - Sibel Erkota: Product Owner
+- Yunus Emre Kehribar: Scrum Master
 - Emirhan Türkol: Developer
-- Yunus Emre Kehribar: Developer
 - Şeyma Melisa Günay: Developer
 
 ---
