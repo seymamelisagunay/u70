@@ -71,7 +71,7 @@ Scrum Notları : https://1drv.ms/w/s!AvADog7jJu1_gnF8u4Huk3Pf5lIo?e=hco0K9
 
 **Sprint board update**: Sprint board Ekran görüntüsü:
 
-<img width="1138" alt="SprintBoard" src="https://github.com/seymamelisagunay/u70/assets/86656894/ee294383-1f9c-452e-9504-88fd05da937c">
+<img width="1138" alt="SprintBoard" src="https://github.com/seymamelisagunay/u70/blob/main/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202023-06-19%20132033.png">
 
 **Ürün Durumu**: Ekran görüntüleri:
 
