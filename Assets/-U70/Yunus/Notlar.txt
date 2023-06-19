@@ -54,10 +54,10 @@
 		+ Collectable objectler üretilecek ve etkile uygulanacak - objeler kendini belli edecek þekilde göz alýcý olacak ve üzerlerine yürüyünce onlarý alacaðýz
 		+ Ýskeletler öldüklerinde yerde rasgele mermi çýksýn
 		- Boss yaðay zekasý yazýlacak
-			1. 4 tane hýzlý fireball atar
-			2. Ardýndan zeminden 4 tane iskelet çýkartýr
+			+ 4 tane hýzlý fireball atar
+			+ Ardýndan zeminden 4 tane iskelet çýkartýr
 				- Ýskeletleri çýkartýrken bir kalkan aktif olsun ve hasar almasýn
-			3. Hareket edemez, sadece dönebilir
+			+ Hareket edemez, sadece dönebilir
 
 
 
@@ -84,6 +84,7 @@ Notlar
 
         //UnityEditor.EditorApplication.isPaused = true;
 
+		//childTransform.SetLocalPositionAndRotation(new Vector3(0, 0.05f, 0), Quaternion.Euler(0, 5, 0));   ----> animasyonlar saçma sapan oynarken bunun ile rot ve pos'u sabit tuttuk
 
 
 
