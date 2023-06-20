@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -29,12 +30,19 @@ public class BossAI : MonoBehaviour
     public int whichTimeFireBall;                               // boss kaç saldýrýda bir iskelet çýkartacak
     public float atkSpeedSkeletonCall;
 
+    [Space(10)]
+    public ParticleSystem callShield;
+    public ParticleSystem callCircle;
+    public Collider colliderr;
+
+    BossHP bossHP;
 
 
     void Start()
     {
         pcTransform = PlayerHP.ins.transform;
         anim = GetComponentInChildren<Animator>();
+        bossHP = GetComponent<BossHP>();
 
         range = PistolController.ins.range + 1;
         rangeSqr = range * range;
@@ -99,6 +107,7 @@ public class BossAI : MonoBehaviour
         canAtk = false;
         Invoke(nameof(ResetAtk), atkSpeedSkeletonCall);
 
+        CanBossTakeDmg(false);
         anim.SetTrigger("skeleton");
 
         Invoke(nameof(InsSkeleton), 4f);
@@ -109,24 +118,46 @@ public class BossAI : MonoBehaviour
 
         for (int i = 0; i < calledEnemyCount; i++)
         {
-            GameObject a = Instantiate(enemy, transform.position, Quaternion.identity);
-            a.transform.position = new Vector3(transform.position.x + Random.Range(-callRange, callRange), transform.position.y - 2, transform.position.z + Random.Range(-callRange, callRange));
+            Vector3 spawnPos = new(transform.position.x + Random.Range(-callRange, callRange), transform.position.y - 2, transform.position.z + Random.Range(-callRange, callRange));
 
-            a.GetComponent<NavMeshAgent>().enabled = false; 
-            a.GetComponent<EnemyNavMesh>().enabled = false; 
+            Instantiate(callCircle, spawnPos + new Vector3(0, 2.1f, 0), Quaternion.Euler(90, 0, 0));
+            GameObject skeleton = Instantiate(enemy, spawnPos, Quaternion.Euler(0, Random.Range(0, 360), 0));
 
-            a.transform.DOMoveY(a.transform.position.y + 2, 1.5f);
+            skeleton.GetComponent<NavMeshAgent>().enabled = false; 
+            skeleton.GetComponent<EnemyNavMesh>().enabled = false;
+            skeleton.GetComponent<EnemyHP>().enabled = false;
 
+            skeleton.transform.DOMoveY(skeleton.transform.position.y + 2, 1.5f);
 
-            Invoke(nameof(StartSkeletonSystem), 1.5f);
+            StartCoroutine(StartSkeletonSystem(1.5f, skeleton));
+            callShield.Stop();
         }
     }
-    void StartSkeletonSystem()
-    { 
-        //a.GetComponent<NavMeshAgent>().enabled = false;
-        //a.GetComponent<EnemyNavMesh>().enabled = false;
+    IEnumerator StartSkeletonSystem(float waitTime, GameObject skeleton)
+    {
+        yield return new WaitForSeconds(waitTime);
+        CanBossTakeDmg(true);
 
-        //doðduklarýnda saldýrsýnlar
+        skeleton.GetComponent<NavMeshAgent>().enabled = true;
+        skeleton.GetComponent<EnemyNavMesh>().enabled = true;
+        skeleton.GetComponent<EnemyHP>().enabled = true;
+
+        skeleton.GetComponent<EnemyNavMesh>().FollowPlayer();
+    }
+    void CanBossTakeDmg(bool truee)
+    {
+        if (truee)
+        {
+            callShield.Stop();
+            bossHP.canTakeDmg = true;
+            colliderr.enabled = true;
+        }
+        else
+        {
+            callShield.Play();
+            bossHP.canTakeDmg = false;
+            colliderr.enabled = false;
+        }
     }
 
 

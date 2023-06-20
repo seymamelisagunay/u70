@@ -13,6 +13,7 @@ public class BossHP : MonoBehaviour
 
     float hp;
     bool dead;
+    [HideInInspector] public bool canTakeDmg;
 
     [Header("UI Objects")]
     public RectTransform hpCanvas;
@@ -24,22 +25,26 @@ public class BossHP : MonoBehaviour
     {
         hp = maxHealth;
         dead = false;
+        canTakeDmg = true;
 
         hpImage.fillAmount = 1;
         hpTxt.text = hp.ToString();
     }
     public void GetDamage(float damage)
     {
-        hp -= damage - damage * armour;
-
-        if (hp <= 0)
+        if (canTakeDmg)
         {
-            hp = 0;
-            Die();
-        }
+            hp -= damage - damage * armour;
 
-        hpImage.fillAmount = hp / maxHealth;
-        hpTxt.text = hp.ToString();
+            if (hp <= 0)
+            {
+                hp = 0;
+                Die();
+            }
+
+            hpImage.fillAmount = hp / maxHealth;
+            hpTxt.text = hp.ToString();
+        }
     }
 
     void Die()

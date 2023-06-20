@@ -24,7 +24,7 @@ public class EnemyNavMesh : MonoBehaviour
     [HideInInspector] public bool canGiveDmg;
 
 
-    void Start()
+    private void OnEnable()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
@@ -40,7 +40,6 @@ public class EnemyNavMesh : MonoBehaviour
         agent.isStopped = true;
 
         defaultSpeed = agent.speed;
-
     }
 
     // Update is called once per frame
@@ -50,15 +49,23 @@ public class EnemyNavMesh : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.T))
             {
-                follow = true;
-                agent.isStopped = false;
+                FollowPlayer();
             }
             if (Input.GetKeyDown(KeyCode.G))
             {
-                follow = false;
-                agent.isStopped = true;
+                StopFollow();
             }
         }
+    }
+    public void FollowPlayer()
+    {
+        follow = true;
+        agent.isStopped = false;
+    }
+    public void StopFollow()
+    {
+        follow = false;
+        agent.isStopped = true;
     }
 
     private void FixedUpdate()

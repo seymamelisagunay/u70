@@ -53,17 +53,24 @@
 		+ Benim sistemler adalara entegre edilecek
 		+ Collectable objectler üretilecek ve etkile uygulanacak - objeler kendini belli edecek þekilde göz alýcý olacak ve üzerlerine yürüyünce onlarý alacaðýz
 		+ Ýskeletler öldüklerinde yerde rasgele mermi çýksýn
-		- Boss yaðay zekasý yazýlacak
+
+		+ Boss yapay zekasý yazýlacak
 			+ 4 tane hýzlý fireball atar
 			+ Ardýndan zeminden 4 tane iskelet çýkartýr
-				- Ýskeletleri çýkartýrken bir kalkan aktif olsun ve hasar almasýn
+				+ Ýskeletleri çýkartýrken bir kalkan aktif olsun ve hasar almasýn
 			+ Hareket edemez, sadece dönebilir
+			- Fireball herhangi bir þeye temas halinde patlayacak
+			- Bize deðerse hasar verecek
+			- FireBall vfx yapýlacak
+			- Fireball enemylerin içinden gececek 
 
 
 
 
 Olasý 4- Player bomba atma mekaniði eklenebilir
 Olasý 5- Eðer her þey iyi giderse menzilli düþman eklenebilir 
+
+
 
 
 
