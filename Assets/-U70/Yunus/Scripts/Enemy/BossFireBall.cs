@@ -1,18 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossFireBall : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public ParticleSystem fireBallVFX;
+    public ParticleSystem fireBallExpVFX;
+    
+    public float damage;
+    public float dieTime;
+
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player") && other.name == "Capsule")
+        {
+            other.GetComponentInParent<PlayerHP>().GetDamage(damage);
+
+            StopFireball();
+        }
+
+        if (other.CompareTag("Untagged") && other.CompareTag("Ground"))
+        {
+            StopFireball();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void StopFireball()
     {
-        
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        fireBallVFX.Stop();
+        fireBallExpVFX.Play();
+        Destroy(gameObject, dieTime);
     }
 }

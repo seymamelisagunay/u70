@@ -505,15 +505,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireball: {fileID: 5803185869231727824, guid: 88c17e86bfb8ccc4da2f381ea3a84f17, type: 3}
-  fireballSpeed: 6
+  fireBallDamage: 10
+  fireballSpeed: 3
   muzzleHand: {fileID: 1731312832}
   childTransform: {fileID: 543450653655175810}
   distanceCheckTime: 0.5
-  atkSpeedFireBall: 2
+  atkSpeedFireBall: 1
   enemy: {fileID: 3413120489866164721, guid: c7785f7440eea7a408933ff9e5097c0d, type: 3}
   calledEnemyCount: 3
   callRange: 5
-  whichTimeFireBall: 2
+  whichTimeFireBall: 5
   atkSpeedSkeletonCall: 5
   callShield: {fileID: 1601506140696354705}
   callCircle: {fileID: 8199560151555222105, guid: 00a662cf62f02ca448422773123a38b7, type: 3}
@@ -729,63 +730,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1826680550049583632, guid: 95c7ccb23911c204d9507ac749a836bc, type: 3}
   m_PrefabInstance: {fileID: 437713775}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &558535789
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
-      propertyPath: m_Name
-      value: Explosion
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986179179329749341, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986179179329749341, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 87.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986179179329749341, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.390767
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986179179329749341, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 101.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986179179329749341, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986179179329749341, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986179179329749341, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986179179329749341, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986179179329749341, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986179179329749341, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986179179329749341, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
 --- !u!114 &601908126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2032,7 +1976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 442396853590932270, guid: 89dc5c8970d29344ea7ec87430569111, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 442396853590932270, guid: 89dc5c8970d29344ea7ec87430569111, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2503,7 +2447,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &11034334836385999
 Transform:
