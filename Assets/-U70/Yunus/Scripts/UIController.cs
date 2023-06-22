@@ -12,6 +12,9 @@ public class UIController : MonoBehaviour
 
     public float pnlFadeUptime, txtFadeUptime;
 
+    [Header("Hit Image")]
+    public RectTransform hitUI;
+
 
     private void Awake()
     {
@@ -19,6 +22,8 @@ public class UIController : MonoBehaviour
     }
     private void Start()
     {
+        hitUI.DOScale(0, 0f);
+
         deadPanel.DOScale(0, 0);
         deadPanel.GetComponent<CanvasGroup>().alpha = 0;
 
@@ -45,5 +50,11 @@ public class UIController : MonoBehaviour
     public void ResetGameBtn()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ShowHitUI()
+    {
+        hitUI.DOScale(1, 0.05f);
+        hitUI.DOScale(0, 0.05f).SetDelay(0.2f);
     }
 }

@@ -65,6 +65,12 @@
 			+ Fireball enemylerin içinden gececek 
 
 
+		- Player ahsar alýnca hasar nispetinde ekran sallansýn
+		- Player ateþ edince ekran sallansýn
+		+ Mermiler düþmana ateþ edince hit ui'ý gözüksün
+		+ Player öldüðünde kullanýcý inputlarý çalýþmasýn
+
+
 
 
 Olasý 4- Player bomba atma mekaniði eklenebilir

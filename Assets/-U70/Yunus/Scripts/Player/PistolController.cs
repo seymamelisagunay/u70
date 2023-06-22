@@ -93,7 +93,7 @@ public class PistolController : MonoBehaviour
 
     public void Shoot() //Daha sonradan mobil için ui'a bir buton eklenecek
     {
-        if (canAtk && !isFrontWall && ammo > 0)
+        if (canAtk && !isFrontWall && ammo > 0 && PlayerHP.ins.isAlive)
         {
             pistolAnim.SetTrigger("pistolShoot");
 
@@ -120,7 +120,7 @@ public class PistolController : MonoBehaviour
     }
     public void ReloadPistol()
     {
-        if (canAtk && !isFrontWall && ammo < maxPistolAmmo && ThereIsAmmo())
+        if (canAtk && !isFrontWall && ammo < maxPistolAmmo && ThereIsAmmo() && PlayerHP.ins.isAlive)
         {
             int reloadAmmo = ReloadAmmo();
 
@@ -142,11 +142,15 @@ public class PistolController : MonoBehaviour
             {
                 GeneralPool.BloodEffect(hit.point, 1);
                 hit.transform.GetComponentInParent<BossHP>().GetDamage(bulletDamage);
+
+                UIController.ins.ShowHitUI();
             }
             else if (hit.transform.CompareTag("EnemySkeleton"))
             {
                 GeneralPool.FlashEffect(hit.point, 1);
                 hit.transform.GetComponentInParent<EnemyHP>().GetDamage(bulletDamage);
+
+                UIController.ins.ShowHitUI();
             }
             else
             {

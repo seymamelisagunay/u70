@@ -505,7 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireball: {fileID: 5803185869231727824, guid: 88c17e86bfb8ccc4da2f381ea3a84f17, type: 3}
-  fireBallDamage: 10
+  fireBallDamage: 60
   fireballSpeed: 3
   muzzleHand: {fileID: 1731312832}
   childTransform: {fileID: 543450653655175810}

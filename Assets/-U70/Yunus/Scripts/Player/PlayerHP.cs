@@ -1,3 +1,4 @@
+using StarterAssets;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -57,6 +58,8 @@ public class PlayerHP : MonoBehaviour
     void Die()
     {
         isAlive = false;
+        GetComponent<FirstPersonController>().isAlive = false;
+
         UIController.ins.YouDied();
     }
 }
