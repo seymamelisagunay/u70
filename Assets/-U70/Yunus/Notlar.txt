@@ -59,10 +59,10 @@
 			+ Ardýndan zeminden 4 tane iskelet çýkartýr
 				+ Ýskeletleri çýkartýrken bir kalkan aktif olsun ve hasar almasýn
 			+ Hareket edemez, sadece dönebilir
-			- Fireball herhangi bir þeye temas halinde patlayacak
-			- Bize deðerse hasar verecek
-			- FireBall vfx yapýlacak
-			- Fireball enemylerin içinden gececek 
+			+ Fireball herhangi bir þeye temas halinde patlayacak
+			+ Bize deðerse hasar verecek
+			+ FireBall vfx yapýlacak
+			+ Fireball enemylerin içinden gececek 
 
 
 
